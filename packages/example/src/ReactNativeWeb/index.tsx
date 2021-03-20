@@ -3,7 +3,7 @@ import {Text, View} from 'react-native';
 
 const ReactNativeWeb: React.FC = () => {
 	return (
-		<View>
+		<View style={{backgroundColor: 'white', width: '100%'}}>
 			<Text>working well!</Text>
 		</View>
 	);

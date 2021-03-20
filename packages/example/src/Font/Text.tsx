@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const Base = styled.div`
@@ -18,7 +17,7 @@ const Offset = styled.div`
 	top: 0;
 `;
 
-export const TextComp = () => {
+export const TextComp: React.FC = () => {
 	return (
 		<div
 			style={{
@@ -32,7 +31,7 @@ export const TextComp = () => {
 			>
 				{new Array(100)
 					.fill(true)
-					.map((a, i) => i)
+					.map((_, i) => i)
 					.map((i) => {
 						return (
 							<Offset
