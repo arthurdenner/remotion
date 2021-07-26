@@ -156,7 +156,7 @@ export const Index: React.FC = () => {
 				width={1080}
 				height={1080}
 				fps={30}
-				durationInFrames={300}
+				durationInFrames={150}
 			/>
 			<Composition
 				id="audio-visualization"

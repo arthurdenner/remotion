@@ -10,11 +10,12 @@
 		"dist"
 	],
 	"scripts": {
+		"serve": "npx http-server src/AudioTesting",
 		"start": "remotion preview src/index.tsx",
 		"start-js": "remotion preview src/entry.jsx",
 		"test": "eslint src --ext ts,tsx,js,jsx",
 		"build": "tsc -d",
-		"render": "remotion render src/index.tsx react-svg video.mp4",
+		"render": "remotion render src/index.tsx audio-testing video.mp4",
 		"render-js": "remotion render src/entry.jsx framer video.mp4",
 		"render-transparent": "remotion render src/index.tsx --image-format=png --pixel-format=yuva420p --codec=vp8 react-svg video.webm"
 	},
