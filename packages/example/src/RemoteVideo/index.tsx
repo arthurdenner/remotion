@@ -9,7 +9,9 @@ const RemoteVideo: React.FC = () => {
 		<Video
 			ref={ref}
 			volume={interpolate(frame, [0, 500], [1, 0], {extrapolateRight: 'clamp'})}
-			src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+			crossOrigin="anonymous"
+			src="https://iandevlin.github.io/mdn/video-player-with-captions/video/sintel-short.mp4"
+			startFrom={600}
 		/>
 	);
 };
