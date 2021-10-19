@@ -406,6 +406,7 @@ importers:
       eslint: ^7.25.0
       express: ^4.17.1
       jest: ^27.0.6
+      lottie-web: ^5.7.14
       mdx-loader: 3.0.2
       polished: ^4.0.5
       prettier: ^2.0.5
@@ -423,8 +424,8 @@ importers:
       '@babel/plugin-syntax-jsx': 7.12.13
       '@babel/preset-env': 7.12.13
       '@babel/preset-react': 7.12.13
-      '@mdx-js/react': 1.6.22_react@17.0.2
-      '@react-three/drei': 4.3.3_8591520f68da51cd82ec5afcc665d0e6
+      '@mdx-js/react': 1.6.22
+      '@react-three/drei': 4.3.3_three@0.133.1
       '@remotion/babel-loader': link:../babel-loader
       '@remotion/bundler': link:../bundler
       '@remotion/cli': link:../cli
@@ -439,11 +440,12 @@ importers:
       '@types/styled-components': 5.1.14
       babel-loader: 8.2.2
       express: 4.17.1
-      mdx-loader: 3.0.2_react@17.0.2
+      lottie-web: 5.7.14
+      mdx-loader: 3.0.2
       polished: 4.1.3
       prettier: 2.4.1
       remotion: link:../core
-      styled-components: 5.3.1_react-dom@17.0.2+react@17.0.2
+      styled-components: 5.3.1
       svg-path-properties: 1.0.11
       three: 0.133.1
       ts-node: 9.1.1_typescript@4.4.3
@@ -456,7 +458,7 @@ importers:
       eslint: 7.32.0
       jest: 27.2.4_ts-node@9.1.1
       prettier-plugin-organize-imports: 1.1.1_prettier@2.4.1+typescript@4.4.3
-      ts-jest: 27.0.5_52a571d76319e63aeaa66dc9db9e90cc
+      ts-jest: 27.0.5_jest@27.2.4+typescript@4.4.3
 
   packages/gif:
     specifiers:
@@ -6023,6 +6025,12 @@ packages:
       - supports-color
     dev: false
 
+  /@mdx-js/react/1.6.22:
+    resolution: {integrity: sha512-TDoPum4SHdfPiGSAaRBw7ECyI8VaHpK8GJugbJIJuqyh6kzw9ZLJZW3HGL3NNrJGxcAixUvqROm+YuQOo5eXtg==}
+    peerDependencies:
+      react: ^16.13.1 || ^17.0.0
+    dev: false
+
   /@mdx-js/react/1.6.22_react@17.0.2:
     resolution: {integrity: sha512-TDoPum4SHdfPiGSAaRBw7ECyI8VaHpK8GJugbJIJuqyh6kzw9ZLJZW3HGL3NNrJGxcAixUvqROm+YuQOo5eXtg==}
     peerDependencies:
@@ -6282,61 +6290,56 @@ packages:
       react-dom: 17.0.2_react@17.0.2
     dev: false
 
-  /@react-spring/animated/9.2.5_react@17.0.2:
+  /@react-spring/animated/9.2.5:
     resolution: {integrity: sha512-SDIgozNdxQ8xj4xbrF9aDsU/xyZ1WlnbnLo6BAvTciVIwp4Zhbt8keISQ2bq3THDjPxQbRTzxry8pSW2qUwXaw==}
     peerDependencies:
       react: ^16.8.0  || ^17.0.0
     dependencies:
-      '@react-spring/shared': 9.2.5_react@17.0.2
+      '@react-spring/shared': 9.2.5
       '@react-spring/types': 9.2.5
-      react: 17.0.2
     dev: false
 
-  /@react-spring/core/9.2.5_react@17.0.2:
+  /@react-spring/core/9.2.5:
     resolution: {integrity: sha512-3pQOA1QyEu3/8tEfZ0DGklPULyM+bXqJE0JJ0S0lBUivd2MvxhVbJzqoHKxdoHI8CsVSFWMNwwJQ4Vd/XpAk8w==}
     requiresBuild: true
     peerDependencies:
       react: ^16.8.0  || ^17.0.0
     dependencies:
-      '@react-spring/animated': 9.2.5_react@17.0.2
-      '@react-spring/shared': 9.2.5_react@17.0.2
+      '@react-spring/animated': 9.2.5
+      '@react-spring/shared': 9.2.5
       '@react-spring/types': 9.2.5
-      react: 17.0.2
     dev: false
 
   /@react-spring/rafz/9.2.5:
     resolution: {integrity: sha512-FZdbgcBMF1DM/eCnHZ28nHUG984gqcZHWlz2aIfj5TikPTzgVYDECCW/Pvt3ncHLTxikjYn2wvDV3/Q68yqv8A==}
     dev: false
 
-  /@react-spring/shared/9.2.5_react@17.0.2:
+  /@react-spring/shared/9.2.5:
     resolution: {integrity: sha512-kutUl8PN0xBSXBmpnHJVFDsgOCFP448syiCcRfdSsryO8kVfJOcSNT4BzIqmzDCWto/neBQJs2iEhKOZTfwQnA==}
     peerDependencies:
       react: ^16.8.0  || ^17.0.0
     dependencies:
       '@react-spring/rafz': 9.2.5
       '@react-spring/types': 9.2.5
-      react: 17.0.2
     dev: false
 
   /@react-spring/types/9.2.5:
     resolution: {integrity: sha512-ayitxzSUGO4MTQ6VOeNgUviTV/8nxjwGq6Ie+pFgv6JUlOecwdzo2/apEeHN6ae9tbcxQJx6nuDw/yb590M8Uw==}
     dev: false
 
-  /@react-spring/web/9.2.5_react-dom@17.0.2+react@17.0.2:
+  /@react-spring/web/9.2.5:
     resolution: {integrity: sha512-PYwL03eA9clHPzLHjPwNuJuGPAcmT7Kti1bD1AVTM203qrhF0Nhj8dvCeMqfLVUaCIsr+z3kYw+p45izNxbvZg==}
     peerDependencies:
       react: ^16.8.0  || ^17.0.0
       react-dom: ^16.8.0  || ^17.0.0
     dependencies:
-      '@react-spring/animated': 9.2.5_react@17.0.2
-      '@react-spring/core': 9.2.5_react@17.0.2
-      '@react-spring/shared': 9.2.5_react@17.0.2
+      '@react-spring/animated': 9.2.5
+      '@react-spring/core': 9.2.5
+      '@react-spring/shared': 9.2.5
       '@react-spring/types': 9.2.5
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
     dev: false
 
-  /@react-three/drei/4.3.3_8591520f68da51cd82ec5afcc665d0e6:
+  /@react-three/drei/4.3.3_three@0.133.1:
     resolution: {integrity: sha512-yokp4ZZgKP/4PS36JHqIoES3Zj1C5zJjCO78uWv9qLA/4LFGLB4ev/rVUz0crA/DjKdYcXxDJR09B7NgWlyofg==}
     peerDependencies:
       '@react-three/fiber': '>=6.0'
@@ -6348,23 +6351,20 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.15.4
-      '@react-spring/web': 9.2.5_react-dom@17.0.2+react@17.0.2
-      '@react-three/fiber': 6.2.3_8e92467867dafd26e6d8488bbebf6d56
+      '@react-spring/web': 9.2.5
       blob-polyfill: 4.0.20200601
       detect-gpu: 3.1.20
       glsl-noise: 0.0.0
       lodash.omit: 4.5.0
       lodash.pick: 4.4.0
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
       react-merge-refs: 1.1.0
       stats.js: 0.17.0
       three: 0.133.1
       three-stdlib: 2.4.2_three@0.133.1
       troika-three-text: 0.38.1_three@0.133.1
-      use-asset: 1.0.4_react@17.0.2
+      use-asset: 1.0.4
       utility-types: 3.10.0
-      zustand: 3.5.12_react@17.0.2
+      zustand: 3.5.12
     dev: false
 
   /@react-three/fiber/6.2.3_8e92467867dafd26e6d8488bbebf6d56:
@@ -8545,7 +8545,7 @@ packages:
       '@babel/helper-module-imports': 7.15.4
       babel-plugin-syntax-jsx: 6.18.0
       lodash: 4.17.21
-      styled-components: 5.3.1_react-dom@17.0.2+react@17.0.2
+      styled-components: 5.3.1
     dev: false
 
   /babel-plugin-syntax-jsx/6.18.0:
@@ -15441,6 +15441,10 @@ packages:
     dependencies:
       js-tokens: 4.0.0
 
+  /lottie-web/5.7.14:
+    resolution: {integrity: sha512-J+QEPse7Rws0XvTqRJNtcE8cszb5FWYFHubEK6bgDJtw64/AQJ40aazbWXsWGBM4sm/PgLBLgmmhDU4QpLiieg==}
+    dev: false
+
   /lower-case-first/1.0.2:
     resolution: {integrity: sha1-5dp8JvKacHO+AtUrrJmA5ZIq36E=}
     dependencies:
@@ -15678,11 +15682,11 @@ packages:
     resolution: {integrity: sha512-no+6C7HQMtDyDjW6wk9hUPND1Fm+7UCpvH+GtGn49qR35FG+HbMBVYgukpfF77Q4W91CID/Uc+kUK9Q7TAQpRw==}
     dev: false
 
-  /mdx-loader/3.0.2_react@17.0.2:
+  /mdx-loader/3.0.2:
     resolution: {integrity: sha512-JJtq6sbVwLTnuzClq4DUSPIJixpvRfHn4+sdy1/tl9qf02VjITNx1DAZbnBlmfEIdWQJ7hwPkZOHO9ht4bLRAw==}
     dependencies:
       '@mdx-js/mdx': 1.6.22
-      '@mdx-js/react': 1.6.22_react@17.0.2
+      '@mdx-js/react': 1.6.22
       gray-matter: 4.0.3
       hast-util-to-string: 1.0.4
       loader-utils: 1.4.0
@@ -20758,7 +20762,7 @@ packages:
       inline-style-parser: 0.1.1
     dev: false
 
-  /styled-components/5.3.1_react-dom@17.0.2+react@17.0.2:
+  /styled-components/5.3.1:
     resolution: {integrity: sha512-JThv2JRzyH0NOIURrk9iskdxMSAAtCfj/b2Sf1WJaCUsloQkblepy1jaCLX/bYE+mhYo3unmwVSI9I5d9ncSiQ==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -20774,8 +20778,6 @@ packages:
       babel-plugin-styled-components: 1.13.2_styled-components@5.3.1
       css-to-react-native: 3.0.0
       hoist-non-react-statics: 3.3.2
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
       shallowequal: 1.1.0
       supports-color: 5.5.0
     dev: false
@@ -21417,7 +21419,37 @@ packages:
       '@types/jest': 27.0.2
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
-      jest: 27.2.4
+      jest: 27.2.4_ts-node@9.1.1
+      jest-util: 27.2.4
+      json5: 2.2.0
+      lodash: 4.17.21
+      make-error: 1.3.6
+      semver: 7.3.5
+      typescript: 4.4.3
+      yargs-parser: 20.2.9
+    dev: true
+
+  /ts-jest/27.0.5_jest@27.2.4+typescript@4.4.3:
+    resolution: {integrity: sha512-lIJApzfTaSSbtlksfFNHkWOzLJuuSm4faFAfo5kvzOiRAuoN4/eKxVJ2zEAho8aecE04qX6K1pAzfH5QHL1/8w==}
+    engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
+    hasBin: true
+    peerDependencies:
+      '@babel/core': '>=7.0.0-beta.0 <8'
+      '@types/jest': ^27.0.0
+      babel-jest: '>=27.0.0 <28'
+      jest: ^27.0.0
+      typescript: '>=3.8 <5.0'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@types/jest':
+        optional: true
+      babel-jest:
+        optional: true
+    dependencies:
+      bs-logger: 0.2.6
+      fast-json-stable-stringify: 2.1.0
+      jest: 27.2.4_ts-node@9.1.1
       jest-util: 27.2.4
       json5: 2.2.0
       lodash: 4.17.21
@@ -22023,6 +22055,14 @@ packages:
     dependencies:
       punycode: 1.3.2
       querystring: 0.2.0
+    dev: false
+
+  /use-asset/1.0.4:
+    resolution: {integrity: sha512-7/hqDrWa0iMnCoET9W1T07EmD4Eg/Wmoj/X8TGBc++ECRK4m5yTsjP4O6s0yagbxfqIOuUkIxe2/sA+VR2GxZA==}
+    peerDependencies:
+      react: '>=17.0'
+    dependencies:
+      fast-deep-equal: 3.1.3
     dev: false
 
   /use-asset/1.0.4_react@17.0.2:
@@ -23145,6 +23185,16 @@ packages:
 
   /zstddec/0.0.2:
     resolution: {integrity: sha512-DCo0oxvcvOTGP/f5FA6tz2Z6wF+FIcEApSTu0zV5sQgn9hoT5lZ9YRAKUraxt9oP7l4e8TnNdi8IZTCX6WCkwA==}
+    dev: false
+
+  /zustand/3.5.12:
+    resolution: {integrity: sha512-Cv9fX/yM5HXYODkn3Q/HMmMofnmZw3yqM73VT/3rQEvI/04Yl0OFNO24qMofhN82xTPWcCffkGPFCMq8r67Whg==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      react: '>=16.8'
+    peerDependenciesMeta:
+      react:
+        optional: true
     dev: false
 
   /zustand/3.5.12_react@17.0.2:

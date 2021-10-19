@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+* {
+	font-family: 'Creepster';
+}
+
+.container {
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+
+.container h1 {
+	color: white;
+	font-size: 8rem;
+	margin: 0;
+	text-align: center;
+}
+
+.container span {
+	color: white;
+	font-size: 1.5rem;
+	letter-spacing: 1.2px;
+	text-align: center;
+}
+
+.animation-container {
+	display: grid;
+	align-content: center;
+	flex: 1;
+}
+
+.animation {
+	height: 700px;
+}

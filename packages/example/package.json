@@ -14,7 +14,7 @@
 		"start-js": "remotion preview src/entry.jsx",
 		"test": "eslint src --ext ts,tsx,js,jsx && jest",
 		"build": "tsc -d",
-		"render": "remotion render src/index.tsx react-svg out/video.mp4",
+		"render": "remotion render src/index.tsx lottie-test out/video.mp4",
 		"render-js": "remotion render src/entry.jsx framer out/video.mp4",
 		"render-transparent": "remotion render src/index.tsx --image-format=png --pixel-format=yuva420p --codec=vp8 react-svg out/video.webm"
 	},
@@ -38,6 +38,7 @@
 		"@types/styled-components": "^5.1.1",
 		"babel-loader": "^8.2.2",
 		"express": "^4.17.1",
+		"lottie-web": "^5.7.14",
 		"mdx-loader": "3.0.2",
 		"polished": "^4.0.5",
 		"prettier": "^2.0.5",
