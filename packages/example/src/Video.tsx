@@ -28,6 +28,14 @@ export const Index: React.FC = () => {
 				width={1080}
 			/>
 			<Composition
+				id="lottie-test2"
+				lazyComponent={() => import('./LottieTesting2')}
+				durationInFrames={150}
+				fps={30}
+				height={1200}
+				width={1600}
+			/>
+			<Composition
 				id="dynamic-duration"
 				component={VideoTesting}
 				width={1080}

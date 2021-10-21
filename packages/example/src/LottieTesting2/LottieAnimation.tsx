@@ -1,6 +1,11 @@
 import React from 'react';
 import lottie, {AnimationItem} from 'lottie-web';
-import {continueRender, delayRender, useCurrentFrame} from 'remotion';
+import {
+	continueRender,
+	delayRender,
+	interpolate,
+	useCurrentFrame,
+} from 'remotion';
 
 const getNextFrame = (
 	currentFrame: number,
@@ -17,9 +22,9 @@ export const LottieAnimation = () => {
 	const containerRef = React.useRef<HTMLDivElement>(null);
 	const [handle] = React.useState(delayRender);
 	const frame = useCurrentFrame();
-	const speed = 2;
+	const speed = 1;
 
-	const expectedFrame = frame * speed;
+	const expectedFrame = interpolate(frame, [-1, 0, 1], [-1, 0, speed]);
 
 	React.useEffect(() => {
 		if (!containerRef.current) {
@@ -29,7 +34,8 @@ export const LottieAnimation = () => {
 		animationRef.current = lottie.loadAnimation({
 			container: containerRef.current,
 			autoplay: false,
-			path: 'https://assets9.lottiefiles.com/packages/lf20_rt9mhehe.json',
+			// https://lottiefiles.com/37789-scary-halloween-pumpkin
+			path: 'https://assets4.lottiefiles.com/packages/lf20_c5izbrx1.json',
 		});
 
 		const {current: animation} = animationRef;
@@ -58,5 +64,5 @@ export const LottieAnimation = () => {
 		animationRef.current.goToAndStop(segment, true);
 	}, [expectedFrame]);
 
-	return <div ref={containerRef} className="animation" />;
+	return <div ref={containerRef} />;
 };
