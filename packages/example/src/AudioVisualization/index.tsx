@@ -114,8 +114,8 @@ const AudioVisualization: React.FC = () => {
 		[0, 30]
 	);
 
-	const dropStart = 1989;
-	const dropEnd = 3310;
+	const dropStart = 20;
+	const dropEnd = 70;
 
 	const dayInterpolation = [dropStart - 5, dropStart, dropEnd, dropEnd + 5];
 

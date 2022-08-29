@@ -419,7 +419,7 @@ export const Index: React.FC = () => {
 					width={1080}
 					height={1080}
 					fps={30}
-					durationInFrames={180 * 30}
+					durationInFrames={100}
 				/>
 			</Folder>
 			<Folder name="three">

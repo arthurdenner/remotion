@@ -308,6 +308,7 @@ export const spawnFfmpeg = async (
 
 	const ffmpegArgs = [
 		['-r', String(options.fps)],
+		['-i', path.join(__dirname, '..', 'src', 'cover.jpeg')],
 		...(options.internalOptions?.preEncodedFileLocation
 			? [['-i', options.internalOptions?.preEncodedFileLocation]]
 			: [
@@ -353,16 +354,28 @@ export const spawnFfmpeg = async (
 					' '
 				),
 		],
+		[
+			'-map',
+			'0',
+			'-map',
+			'1',
+			'-map',
+			'2',
+			'-c',
+			'copy',
+			'-disposition:0',
+			'attached_pic',
+		],
 		options.force ? '-y' : null,
 		options.outputLocation ?? tempFile,
 	];
+
+	const ffmpegString = ffmpegArgs.flat(2).filter(Boolean) as string[];
 
 	if (options.verbose) {
 		console.log('Generated FFMPEG command:');
 		console.log(ffmpegArgs);
 	}
-
-	const ffmpegString = ffmpegArgs.flat(2).filter(Boolean) as string[];
 
 	const task = execa(options.ffmpegExecutable ?? 'ffmpeg', ffmpegString, {
 		cwd: options.dir,

@@ -16,7 +16,8 @@
 		"lint": "eslint src --ext ts,tsx,js,jsx",
 		"test": "vitest --run",
 		"build": "tsc -d",
-		"render": "remotion render src/index.tsx react-svg",
+		"render": "remotion render src/index.tsx audio-visualization",
+		"render:v": "npm run render -- --log=verbose",
 		"render-js": "remotion render src/entry.jsx framer",
 		"render-gif": "remotion render src/index.tsx framer out/video.gif --codec=gif --every-nth-frame=2",
 		"render-transparent": "remotion render src/index.tsx --image-format=png --pixel-format=yuva420p --codec=vp8 react-svg out/video.webm"
